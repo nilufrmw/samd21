@@ -16,7 +16,9 @@ void SysTick_Handler(void) {
   ms++;
 }
 
-/*Initialize the SysTick peripheral. */
+/*
+Initialize the SysTick peripheral.
+*/
 void systick_init(uint32_t cpu_hz) {
   SysTick->LOAD = (cpu_hz / 1000) - 1;
   SysTick->VAL  = 0;
