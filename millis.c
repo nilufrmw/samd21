@@ -34,6 +34,6 @@ void systick_init(uint32_t cpu_hz) {
 /*
 Simple getter function that returns the total elapsed milliseconds since systick_init() was called.
 */
-uint32_t millis(void) {
+uint32_t get_ms(void) {
   return ms;
 }
