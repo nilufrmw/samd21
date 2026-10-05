@@ -1,4 +1,5 @@
 #include "samd21g17d.h"
+#include <stdint.h>
 
 /*
 Cortex-M0+ CMSIS reference:
