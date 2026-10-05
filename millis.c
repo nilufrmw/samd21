@@ -1,3 +1,5 @@
+#include "samd21g17d.h"
+
 /*
 Cortex-M0+ CMSIS reference:
 https://github.com/ARM-software/CMSIS_5/blob/develop/CMSIS/Core/Include/core_cm0plus.h
