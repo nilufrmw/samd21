@@ -25,11 +25,10 @@ void SysTick_Handler(void) {
 }
 
 /*
-Initialize the SysTick peripheral for 1 ms tick rate. Returns true on success, false if cpu_hz produces
-an out-of-range 24-bit reload value.
+Initialize the SysTick to tick for every 1 ms.
 */
-bool systick_init(uint32_t cpu_hz) {
-  // todo
+void systick_init(uint32_t cpu_hz) {
+  SysTick_Config(cpu_hz / 1000);
 }
 
 /*
