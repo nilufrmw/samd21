@@ -9,7 +9,8 @@ to other files as millis() API.
 static volatile uint32_t ms = 0;
 
 /*
-SysTick_Handler() is a fixed, standard ARM Cortex exception name. Every time the timer fires (which is configured to happen once every 1 ms), the CPU jumps here and increments ms by 1.
+SysTick_Handler() is a fixed, standard ARM Cortex exception name. Every time the timer fires (which is configured
+to happen once every 1 ms), the CPU jumps here and increments ms by 1.
 */
 void SysTick_Handler(void) {
   ms++;
