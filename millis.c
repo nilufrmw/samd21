@@ -37,3 +37,14 @@ Simple getter function that returns the total elapsed milliseconds since systick
 uint32_t get_ms(void) {
   return ms;
 }
+
+/*
+Delay function
+*/
+void delay_ms(uint32_t ms) {
+  int start = get_ms();
+  int end = start + ms;
+  while(get_ms() != end) {
+    ;
+  }
+}
