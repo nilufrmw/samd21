@@ -42,8 +42,8 @@ uint32_t get_ms(void) {
 Delay function
 */
 void delay_ms(uint32_t ms) {
-  int start = get_ms();
-  int end = start + ms;
+  uint32_t start = get_ms();
+  uint32_t end = start + ms;
   while(get_ms() != end) {
     ;
   }
