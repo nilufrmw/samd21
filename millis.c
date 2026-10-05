@@ -7,7 +7,7 @@ https://github.com/ARM-software/CMSIS_5/blob/develop/CMSIS/Core/Include/core_cm0
 */
 
 /*
-ms stores the milli second passed so far since systick_init() was called. It's 32-bit integer (SAMD21 is a 32-bit processor,
+ms stores the milli second passed so far since systick_init() was called. It's 32-bit integer (SAMD21 mcu core is a 32-bit processor,
 so reading ms is an atomic operation, also the maximum value a 32-bit integer can hold is 2^32 - 1, and ms increments
 every millisecond, it's maximum value is 2^32 - 1 ms, which is roughly ~ 4 billion. 1 day = 24 * 60 * 60 * 1000 ms; 
 4 billion ~ 50 days before ms wraps to 0). Marked as volatile otherwise compiler will cache this value and ms can change
