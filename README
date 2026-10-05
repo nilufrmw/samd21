@@ -1,1 +1,3 @@
-C APIs implemented for SAMD21 microcontroller. No vendor HAL (only CMSIS header files).
+C APIs implemented for SAMD21 microcontroller. No vendor HAL (only CMSIS header files)
+
+System Timer - docs/system-timer
