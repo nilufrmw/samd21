@@ -25,6 +25,9 @@ void systick_init(uint32_t cpu_hz) {
   SysTick->CTRL = 7; // Bits 0, 1, 2 set: ENABLE | TICKINT | CLKSOURCE
 }
 
+/*
+Simple getter function that returns the total elapsed milliseconds since systick_init() was called.
+*/
 uint32_t millis(void) {
   return ms;
 }
