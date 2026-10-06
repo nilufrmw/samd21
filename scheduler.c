@@ -34,3 +34,15 @@ void run_scheduler(void) {
     }
   }
 }
+
+bool is_task_ready(uint8_t id) {
+  for(int i = 0; i < task_ptr; ++i) {
+    if (tasks[i].id == id) {
+      if (tasks[i].ready) {
+        tasks[i].ready = false;
+        return true;
+      }
+      return false;
+    }
+  }
+}
