@@ -44,7 +44,7 @@ Delay function
 void delay_ms(uint32_t ms) {
   uint32_t start = get_ms();
   uint32_t end = start + ms;
-  while(get_ms() != end) {
-    ;
+  while(get_ms() < end) {
+    __NOP();
   }
 }
