@@ -11,7 +11,7 @@ struct task {
 };
 
 struct task tasks[8];
-uint8_t task_ptr = 0;
+int task_ptr = 0;
 
 void add_task(uint8_t id, uint32_t period) {
   if(task_ptr < 8) {
