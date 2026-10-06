@@ -3,6 +3,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#define MAX_TASKS 8
+
 struct task {
   uint8_t id;
   uint32_t period;
@@ -10,7 +12,7 @@ struct task {
   bool ready;
 };
 
-struct task tasks[8];
+struct task tasks[MAX_TASKS];
 int task_ptr = 0;
 
 void add_task(uint8_t id, uint32_t period) {
