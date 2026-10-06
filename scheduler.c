@@ -6,7 +6,7 @@
 struct task {
   uint8_t id;
   uint32_t period;
-  uint32_t delay;
+  // todo
   bool ready;
 };
 
@@ -17,7 +17,7 @@ void add_task(uint8_t id, uint32_t period) {
   if(task_ptr < 8) {
     tasks[task_ptr].id = id;
     tasks[task_ptr].period = period;
-    tasks[task_ptr].delay = get_ms();
+    // todo
     tasks[task_ptr].ready = false;
     task_ptr++;
   }
