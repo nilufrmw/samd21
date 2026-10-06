@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define MAX_TASKS 8
+#define MAX_TASKS 4
 
 struct task {
   uint8_t id;
