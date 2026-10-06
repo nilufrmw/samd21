@@ -22,3 +22,12 @@ void add_task(uint8_t id, uint32_t period) {
     task_ptr++;
   }
 }
+
+void run_scheduler(void) {
+  uint32_t now = get_ms();
+  for(int i = 0; i < task_ptr; ++i) {
+    if((now - tasks[i].last_run) >= tasks[i].period) {
+
+}
+  }
+}
