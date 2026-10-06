@@ -39,7 +39,7 @@ uint32_t get_ms(void) {
 }
 
 /*
-Delay function. Changed != to < (refer issue #1). Still has dr awbacks for long running systems as overflow
+Delay function. Changed != to < (refer issue #1). Still has drawbacks for long running systems as overflow
 can happen when calculating start + ms. Also added NOP (no operation) line as suggested by @BillisC
 */
 void delay_ms(uint32_t ms) {
