@@ -1,4 +1,4 @@
-#include "samd21g17d.h"
+#include "samd21.h"
 #include <stdint.h>
 
 /*
