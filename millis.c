@@ -1,5 +1,5 @@
 #include "samd21.h"
-#include <stdint.h>
+#include "millis.h"
 
 /*
 Cortex-M0+ CMSIS reference:
