@@ -1,5 +1,5 @@
 #include "samd21.h"
-#include "millis.c"
+#include "millis.h"
 #include <stdint.h>
 #include <stdbool.h>
 
