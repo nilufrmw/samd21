@@ -1,7 +1,7 @@
 #include "scheduler.h"
 #include "millis.h"
 
-void scheduler_run(struct task *tasks, uint32_t count) {
+void scheduler_run(struct task *tasks, int count) {
   while(1) {
     uint32_t now = get_ms();
     for(int i = 0; i < count; i++) {
