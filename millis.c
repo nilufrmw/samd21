@@ -25,15 +25,12 @@ void SysTick_Handler(void) {
 }
 
 /*
-Initialize the SysTick to tick for every 1 ms. Use the core CMSIS api.
+Initialize the SysTick to tick for every 1 ms using the core CMSIS api.
 */
 void systick_init(void) {
   SysTick_Config(SystemCoreClock / 1000);
 }
 
-/*
-Simple getter function that returns the total elapsed milliseconds since systick_init() was called.
-*/
 uint32_t get_ms(void) {
   return ms;
 }
