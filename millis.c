@@ -38,7 +38,9 @@ uint32_t get_ms(void) {
   return ms;
 }
 
-
+/*
+check elapsed time with difference in time rather than comparing with future time using now + ms to avoid overflow and delay errors.
+*/
 void delay_ms(uint32_t ms) {
   while(get_ms() - start < ms) {
     __NOP();
