@@ -9,6 +9,6 @@ struct task {
   uint32_t last_ms;
 };
 
-void scheduler_run(struct task *tasks, uint32_t count);
+void scheduler_run(struct task *tasks, int count);
 
 #endif
