@@ -39,7 +39,7 @@ uint32_t get_ms(void) {
 }
 
 /*
-check elapsed time with difference in time rather than comparing with future time using now + ms to avoid overflow and delay errors.
+check elapsed time with difference in time rather than comparing with future time using start + ms to avoid overflow and delay errors.
 */
 void delay_ms(uint32_t ms) {
   uint32_t start = get_ms();
