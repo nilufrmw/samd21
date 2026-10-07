@@ -38,14 +38,9 @@ uint32_t get_ms(void) {
   return ms;
 }
 
-/*
-Delay function. Changed != to < (refer issue #1). Still has drawbacks for long running systems as overflow
-can happen when calculating start + ms. Also added NOP (no operation) line as suggested by @BillisC
-*/
+
 void delay_ms(uint32_t ms) {
-  uint32_t start = get_ms();
-  uint32_t end = start + ms;
-  while(get_ms() < end) {
+  while(get_ms() - start < ms) {
     __NOP();
   }
 }
