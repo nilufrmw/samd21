@@ -1,48 +1,14 @@
-#include "samd21.h"
+#include "scheduler.h"
 #include "millis.h"
-#include <stdint.h>
-#include <stdbool.h>
 
-#define MAX_TASKS 8
-
-struct task {
-  uint8_t id;
-  uint32_t period;
-  uint32_t last_run;
-  bool ready;
-};
-
-struct task tasks[MAX_TASKS];
-int task_ptr = 0;
-
-void add_task(uint8_t id, uint32_t period) {
-  if(task_ptr < 8) {
-    tasks[task_ptr].id = id;
-    tasks[task_ptr].period = period;
-    tasks[task_ptr].last_run = 0;
-    tasks[task_ptr].ready = false;
-    task_ptr++;
-  }
-}
-
-void run_scheduler(void) {
-  uint32_t now = get_ms();
-  for(int i = 0; i < task_ptr; ++i) {
-    if((now - tasks[i].last_run) >= tasks[i].period) {
-      tasks[i].last_run = now;
-      tasks[i].ready = true;
-    }
-  }
-}
-
-bool is_task_ready(uint8_t id) {
-  for(int i = 0; i < task_ptr; ++i) {
-    if (tasks[i].id == id) {
-      if (tasks[i].ready) {
-        tasks[i].ready = false;
-        return true;
+void scheduler_run(struct task *tasks, uint32_t count) {
+  while (1) {
+    uint32_t now = get_ms();
+    for(int i = 0; i < count; i++) {
+      if(now - tasks[i].last_ms >= tasks[i].interval_ms) {
+        tasks[i].last_ms = now;
+        tasks[i].run();
       }
-      return false;
     }
   }
 }
