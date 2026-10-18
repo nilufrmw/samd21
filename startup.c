@@ -24,7 +24,7 @@ void Reset_Handler(void) {
 }
 
 /*
-If the chip crashes, it gets stuck here safely.
+If program crashes, it gets stuck here safely.
 We can look inside registers.
 */
 void HardFault_Handler(void) {
