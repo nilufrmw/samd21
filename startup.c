@@ -23,8 +23,8 @@ void reset_handler(void) {
 }
 
 /*
-If program crashes, it gets stuck here safely.
-We can look inside registers.
+if program crashes, it gets stuck here safely and
+we can look inside registers.
 */
 void hardfault_handler(void) {
   while(1); 
