@@ -16,7 +16,6 @@ const void* VectorTable[] = {
   (void*) HardFault_Handler  // 0x0000000C - HardFault
 };
 
-
 /* Executed on power-up */
 void Reset_Handler(void) {
   main();
