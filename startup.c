@@ -11,7 +11,7 @@ extern int main(void);
 __attribute__((section(".vectors")))
 const void* vector_table[] = {
   (void*) INITIAL_SP,        // 0x00000000
-  (void*) Reset_Handler,     // 0x00000004
+  (void*) reset_handler,     // 0x00000004
   (void*) 0x0,               // 0x00000008 - NMI
   (void*) hardfault_handler  // 0x0000000C - HardFault
 };
