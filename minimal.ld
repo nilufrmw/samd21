@@ -15,8 +15,8 @@ SECTIONS
 {
   .text :
   {
-    KEEP(*(.vectors)) // Vector table placed at 0x00000000
-    *(.text*)         // Executable instructions 
-    *(.rodata*)       // Read-only constants
+    KEEP(*(.vectors)) /* Vector table placed at 0x00000000 */
+    *(.text*)         /* Executable instructions */ 
+    *(.rodata*)       /* Read-only constants */
   } > FLASH
 }
