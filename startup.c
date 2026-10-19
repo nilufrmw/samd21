@@ -7,7 +7,7 @@ void reset_handler(void);
 void hardfault_handler(void);
 extern int main(void);
 
-/* vector table matched to address 0x00000000 via linker script */
+/* vector table matched to linker script */
 __attribute__((section(".vectors")))
 const void* vector_table[] = {
   (void*) INITIAL_SP,        // 0x00000000
