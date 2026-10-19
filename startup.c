@@ -16,7 +16,7 @@ const void* vector_table[] = {
   (void*) hardfault_handler  // 0x0000000C - HardFault
 };
 
-/* executed on power-up */
+/* executed on reset */
 void reset_handler(void) {
   main();
   while(1); // Safe fallback loop if main returns
