@@ -3,21 +3,21 @@
 #define SRAM_SIZE   (16 * 1024)
 #define INITIAL_SP  (SRAM_START + SRAM_SIZE)
 
-void reset_handler(void);
-void hardfault_handler(void);
+void Reset_Handler(void);
+void HardFault_Handler(void);
 extern int main(void);
 
 /* Vector table matched to linker script */
 __attribute__((section(".vectors")))
 const void* vector_table[] = {
   (void*) INITIAL_SP,        // 0x00000000
-  (void*) reset_handler,     // 0x00000004
+  (void*) Reset_Handler,     // 0x00000004
   (void*) 0x0,               // 0x00000008 - NMI
-  (void*) hardfault_handler  // 0x0000000C - HardFault
+  (void*) HardFault_Handler  // 0x0000000C - HardFault
 };
 
 /* Executed on reset */
-void reset_handler(void) {
+void Reset_Handler(void) {
   /* Branch to main function */
   main();
   
@@ -30,7 +30,7 @@ void reset_handler(void) {
 If program crashes, it gets stuck here safely and
 we can look inside registers.
 */
-void hardfault_handler(void) {
+void HardFault_Handler(void) {
   while(1)
     ;
 }
