@@ -10,7 +10,7 @@ extern int main(void);
 /* Vector table matched to linker script */
 __attribute__((section(".vectors")))
 const void* vector_table[] = {
-  (void*) INITIAL_SP,        // 0x00000000
+  (void*) &_estack,          // 0x00000000 - Initial Main Stack Pointer (MSP)
   (void*) Reset_Handler,     // 0x00000004
   (void*) 0x0,               // 0x00000008 - NMI
   (void*) HardFault_Handler  // 0x0000000C - HardFault
