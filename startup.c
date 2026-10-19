@@ -1,11 +1,9 @@
-/* Calculate the initial stack pointer value (top of 16KB RAM) */
-#define SRAM_START  0x20000000
-#define SRAM_SIZE   (16 * 1024)
-#define INITIAL_SP  (SRAM_START + SRAM_SIZE)
+#include <stdint.h>
 
 void Reset_Handler(void);
 void HardFault_Handler(void);
 extern int main(void);
+extern uint32_t _estack;
 
 /* Vector table matched to linker script */
 __attribute__((section(".vectors")))
