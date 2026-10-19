@@ -8,10 +8,10 @@ extern uint32_t _estack;
 /* Vector table matched to linker script */
 __attribute__((section(".vectors")))
 const void* vector_table[] = {
-  (void*) &_estack,          // 0x00000000 - Initial Main Stack Pointer (MSP)
-  (void*) Reset_Handler,     // 0x00000004
-  (void*) 0x0,               // 0x00000008 - NMI
-  (void*) HardFault_Handler  // 0x0000000C - HardFault
+  (void*) &_estack,
+  (void*) Reset_Handler,
+  (void*) NMI_Handler,
+  (void*) HardFault_Handler
 };
 
 /* Executed on reset */
@@ -20,6 +20,11 @@ void Reset_Handler(void) {
   main();
   
   /* Safe fallback loop if main returns */
+  while(1)
+    ;
+}
+
+void NMI_Handler(void) {
   while(1)
     ;
 }
