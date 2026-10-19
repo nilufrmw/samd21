@@ -15,7 +15,6 @@ SECTIONS
 {
   .text :
   {
-    . = ALIGN(4);
     KEEP(*(.vectors)) // Vector table placed at 0x00000000
     *(.text*)         // Executable instructions 
     *(.rodata*)       // Read-only constants
