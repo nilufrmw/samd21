@@ -31,5 +31,6 @@ if program crashes, it gets stuck here safely and
 we can look inside registers.
 */
 void hardfault_handler(void) {
-  while(1); 
+  while(1)
+    ;
 }
