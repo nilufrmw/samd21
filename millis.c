@@ -25,7 +25,7 @@ void SysTick_Handler(void) {
 }
 
 /*
-Initialize the SysTick to tick for every 1 ms using the core CMSIS api.
+initialize the SysTick to tick for every 1 ms using the core CMSIS api.
 */
 void systick_init(void) {
   SysTick_Config(SystemCoreClock / 1000);
