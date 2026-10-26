@@ -1,4 +1,4 @@
-/* Flash execution only */
+/* flash execution only */
 
 ENTRY(Reset_Handler)
 
