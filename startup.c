@@ -10,8 +10,8 @@ __attribute__((section(".vectors")))
 const void* vector_table[] = {
   (void*) &_estack,
   (void*) Reset_Handler,
-  (void*) NMI_Handler,
-  (void*) HardFault_Handler
+  (void*) Default_Handler,
+  (void*) Default_Handler,
 };
 
 /* Executed on reset */
@@ -24,16 +24,12 @@ void Reset_Handler(void) {
     ;
 }
 
-void NMI_Handler(void) {
-  while(1)
-    ;
-}
-
 /*
 If program crashes, it gets stuck here safely and
 we can look inside registers.
 */
-void HardFault_Handler(void) {
-  while(1)
+void Default_Handler(void) {
+  while(1) {
     ;
+  }
 }
