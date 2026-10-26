@@ -5,7 +5,7 @@ void HardFault_Handler(void);
 extern int main(void);
 extern uint32_t _estack;
 
-/* Vector table matched to linker script */
+/* vector table matched to linker script */
 __attribute__((section(".vectors")))
 const void* vector_table[] = {
   (void*) &_estack,
@@ -14,7 +14,7 @@ const void* vector_table[] = {
   (void*) Default_Handler,
 };
 
-/* Executed on reset */
+/* executed on reset */
 void Reset_Handler(void) {
   /* Branch to main function */
   main();
@@ -25,8 +25,8 @@ void Reset_Handler(void) {
 }
 
 /*
-If program crashes, it gets stuck here safely and
-we can look inside registers.
+if program crashes, it gets stuck here safely and
+we can look inside registers
 */
 void Default_Handler(void) {
   while(1) {
