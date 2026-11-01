@@ -7,7 +7,7 @@ extern uint32_t _estack;
 
 /* vector table matched to linker script */
 __attribute__((section(".vectors")))
-const void* vector_table[] = {
+const void *vector_table[] = {
   (void*) &_estack,
   (void*) Reset_Handler,
   (void*) Default_Handler,
