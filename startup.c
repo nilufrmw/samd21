@@ -2,6 +2,8 @@
 
 void Reset_Handler(void);
 void HardFault_Handler(void);
+void Default_Handler(void);
+
 extern int main(void);
 extern uint32_t _estack;
 
