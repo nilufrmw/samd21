@@ -1,4 +1,4 @@
-#include "samd21.h"
+#include "cm0_plus.h"
 #include "millis.h"
 
 /*
