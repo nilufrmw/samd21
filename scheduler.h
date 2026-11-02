@@ -1,5 +1,4 @@
-#ifndef SCHEDULER_H
-#define SCHEDULER_H
+#pragma once
 
 #include <stdint.h>
 
@@ -10,5 +9,3 @@ struct task {
 };
 
 void scheduler_run(struct task *tasks, int count);
-
-#endif
