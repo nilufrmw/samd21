@@ -18,10 +18,10 @@ const void *vector_table[] = {
 
 /* executed on reset */
 void Reset_Handler(void) {
-  /* Branch to main function */
+  /* branch to main function */
   main();
   
-  /* Safe fallback loop if main returns */
+  /* safe fallback loop if main returns */
   while(1)
     ;
 }
